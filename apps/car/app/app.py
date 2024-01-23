@@ -7,7 +7,7 @@ class CarSerializer(serializers.ModelSerializer):
         fields = ['make', 'model', 'year']
 
     def validate_year(self, value):
-        if value < 1886:  # First car was invented in 1886
+        if value < 1886:  
             raise serializers.ValidationError("Invalid year")
         return value
 
